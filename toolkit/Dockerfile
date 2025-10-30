@@ -68,6 +68,10 @@ RUN curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/in
 # Install Terraform (latest version)
 # Add HashiCorp GPG key and repo
 
+RUN apt-get update && apt-get install -y wget && \
+    wget -O /opt/Insomnia.Core-11.6.2.exe \
+    https://github.com/Kong/insomnia/releases/download/core%4011.6.2/Insomnia.Core-11.6.2.exe && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Set default command
 CMD ["/bin/bash"]
-f
